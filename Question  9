@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        long int summ=0;
+          int digit;
+         long int temp;
+         if(x>INT_MAX || x<INT_MIN){
+            return 0;
+         }
+        temp=x;
+        if(x<0){
+            return false;
+        }
+        while(temp){
+            digit=temp%10;
+            summ=summ*10+digit;
+            temp/=10;
+        }   
+        if(summ==x){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
