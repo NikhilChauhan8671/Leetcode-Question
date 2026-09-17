@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int countCommas(int n) {
+        if(n>999){
+            return n-999;
+        }
+        else if(1000<n && n>99999){
+            return n-99999 ;
+        }
+    return 0;}
+};
