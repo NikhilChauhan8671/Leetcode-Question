@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+        unordered_map<int,int>f;
+        f[0]=1;
+        int prefix=0,ans=0;
+        for(int x:nums){
+            prefix+=x;
+            int rem=prefix%k;
+            if(rem<0){
+                rem+=k;
+            }
+            ans+=f[rem];
+            f[rem]++;
+        }
+       return ans; 
+    }
+};
