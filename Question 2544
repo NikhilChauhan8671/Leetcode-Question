@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int alternateDigitSum(int n) {
+        int a=to_string(n).length();
+        int digit;
+        int sum=0;
+        int b;
+        vector<int>temp;
+        for(int i=0;i<a;i++){
+            digit=n%10;
+            temp.insert(temp.end()-i,digit);
+            n/=10;}
+        for(int i=0;i<temp.size();i++){
+            if(i==0||i%2==0){
+                b=1*temp[i];
+            }
+            else{
+                b=-1*temp[i];
+            }
+            sum+=b;
+        }
+        
+    return sum;}
+};
