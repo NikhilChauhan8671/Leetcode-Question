@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> separateDigits(vector<int>& nums) {
+        string b="";
+        vector<int>temp;
+        for(int i=0;i<nums.size();i++){
+            string a=to_string(nums[i]);
+            b=b+a;
+        }
+        for(int i=0;i<b.size();i++){
+            temp.push_back(b[i]-'0');
+        }
+        
+    return temp;}
+};
