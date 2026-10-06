@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int countIntersectingIntervals(vector<vector<int>>& intervals) {
+        int count=0;
+        for(int i=0;i<intervals.size();i++){
+            for(int k=i+1;k<intervals.size();k++){
+                if(intervals[i][0]<=intervals[k][1]&&intervals[k][0]<=intervals[i][1])
+                {
+                    count++;
+                }
+            }
+        }
+
+   return count; }
+};
