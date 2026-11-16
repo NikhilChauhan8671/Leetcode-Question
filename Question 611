@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int triangleNumber(vector<int>& nums) {
+        int count=0;
+        sort(nums.begin(),nums.end());
+        for(int k=nums.size()-1;k>=2;k--){
+            int a=0;
+            int j=k-1;
+            //int k=nums.size()-1;
+            while(a<j){
+                if(nums[a]+nums[j]>nums[k]){
+                    count+=j-a;
+                    j--;
+                }
+                else{a++;}
+            }
+        }
+        
+   return count; }
+};
